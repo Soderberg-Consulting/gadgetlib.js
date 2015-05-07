@@ -1,7 +1,10 @@
 /*
-    gadgetlib.js v1.0.4
+    gadgetlib.js v1.0.5
     Copyright 2015 OmniUpdate, Inc.
     http://www.omniupdate.com/
+    
+    Changes in 1.0.5:
+      - All gadget methods are bound to the gadget to better support use as callbacks.
     
     Changes in 1.0.4:
       - Starting with OU Campus v10.2.2, the API access token and certain environment details will
@@ -172,7 +175,7 @@
                 callback && callback();
                 deferred.resolve();
             } else {
-                $(gadget).one('ready', function () {
+                $(this).one('ready', function () {
                     callback && callback();
                     deferred.resolve();
                 });
@@ -323,6 +326,11 @@
             return sendMessageToTop('set-location', route);
         }
     };
+    
+    // bind all methods to the gadget object
+    for (var method in gadget) {
+        gadget[method] = gadget[method].bind(gadget);
+    }
     
     gadget.set(getDataFromUrl());
     getEnvironment().then(function (response) {
