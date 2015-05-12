@@ -3,6 +3,10 @@
     Copyright 2015 OmniUpdate, Inc.
     http://www.omniupdate.com/
     
+    Changes in 1.0.5.1:
+      - No code changes. Edited change log to reflect that changes to API token access will
+        occur in OU Campus v10.3, not v10.2.2.
+    
     Changes in 1.0.5:
       - All gadget methods are bound to the gadget to better support use as callbacks.
     
