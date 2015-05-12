@@ -7,7 +7,7 @@
       - All gadget methods are bound to the gadget to better support use as callbacks.
     
     Changes in 1.0.4:
-      - Starting with OU Campus v10.2.2, the API access token and certain environment details will
+      - Starting with OU Campus v10.3, the API access token and certain environment details will
         no longer be embedded in the URLs of custom gadgets. Instead, gadgets must request this
         information from the OU Campus app. This version of gadgetlib does this automatically,
         but since the process is asynchronous, gadget scripts must wait for the token to become
@@ -21,7 +21,7 @@
         `gadget.ready().then(myFunc)`.
         
         The `gadget.ready()` method already works with OU Campus v10.2.1.1. Although the new way
-        of obtaining the API token will not be in place until 10.2.2, you should adapt your
+        of obtaining the API token will not be in place until 10.3, you should adapt your
         gadgets to the new method now in preparation for the change.
     
     Changes in 1.0.3:
