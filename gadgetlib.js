@@ -1,7 +1,12 @@
 /*
-    gadgetlib.js v1.0.5
+    gadgetlib.js v1.0.6
     Copyright 2015 OmniUpdate, Inc.
     http://www.omniupdate.com/
+    
+    Changes in 1.0.6:
+      - The `sendMessageToTop` function is again exposed as the `_sendMessageToTop` method of
+        the `gadget` object. Version 1.0.4 had removed this public method, breaking functionality
+        in gadgets that called it.
     
     Changes in 1.0.5.1:
       - No code changes. Edited change log to reflect that changes to API token access will
@@ -295,6 +300,8 @@
                 }
             });
         },
+        // for backward compatibility with pre-1.0.4 versions of gadgetlib.js
+        _sendMessageToTop: sendMessageToTop,
         // Each of the "ouc" methods below is an asynchronous method that returns a jQuery Deferred
         // object, so you can use methods like `then` to do stuff once the operation is finished.
         oucGetCurrentFileInfo: function () {
