@@ -1,7 +1,11 @@
 /*
-    gadgetlib.js v1.0.6
+    gadgetlib.js v1.0.6.1
     Copyright 2015 OmniUpdate, Inc.
     http://www.omniupdate.com/
+    
+    Changes in 1.0.6.1:
+      - Reintroduced the `Gadget` object, which was dropped in version 1.0.4, for backward
+        compatibility with gadgets that were written against the old library.
     
     Changes in 1.0.6:
       - The `sendMessageToTop` function is again exposed as the `_sendMessageToTop` method of
@@ -356,4 +360,8 @@
     
     // make the gadget object available as a global variable
     window.gadget = gadget;
+    
+    // for backward compatibility with pre-1.0.4 versions of gadgetlib.js
+    window.Gadget = function () {};
+    window.Gadget.prototype = gadget;
 })();
