@@ -1,7 +1,10 @@
 /*
-    gadgetlib.js v1.0.7
+    gadgetlib.js v1.0.7.1
     Copyright 2015 OmniUpdate, Inc.
     http://www.omniupdate.com/
+
+    Changes in 1.0.7.1:
+      - gadgetlib.min.js is now offered.
     
     Changes in 1.0.7:
       - Added oucGetWYSIWYGSelection method which returns the current WYSIWYG selection.
